@@ -1,8 +1,8 @@
 # Route order questions to one team inbox
 
-This example keeps the decision at the boundary: validate the customer contact form, retain the order identifier in the message, and route that message to fulfillment. The service stays small on purpose, so an engineer looking at agents or RAG infrastructure can reuse the business rule without taking on a framework.
+The decision in this example is simple: validate a customer contact form at the boundary, keep the order identifier in the message, and send that message to the fulfillment team. The service is intentionally small so an engineer exploring agents or RAG infrastructure can copy the business rule without adopting a framework.
 
-Infrai is called through one `INFRAI_API_KEY` and a plain HTTP request, so the same typed service can run in a Node process, a queue worker, or an API handler. The client reads the response envelope before status handling, retries a busy response with backoff, and sends a stable request key with the write.
+Infrai is called through one `INFRAI_API_KEY` and a plain HTTP request, so the same typed service can run in a Node process, a queue worker, or an API handler. The client reads the response envelope before interpreting status codes, retries a busy response with backoff, and supplies a stable request key for the write.
 
 ## Run the path
 
